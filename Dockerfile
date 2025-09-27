@@ -50,7 +50,7 @@ RUN set -ex          ;\
     npm run build
 
 # --------------------------------------------------------------------
-FROM docker.io/golang:1.22-alpine AS go-builder
+FROM docker.io/golang:1.25-alpine AS go-builder
 
 WORKDIR /code
 
@@ -81,7 +81,7 @@ RUN set -ex                                                          ;\
     ./quid -help  # smoke test
 
 # --------------------------------------------------------------------
-FROM docker.io/golang:1.22-alpine AS integrator
+FROM docker.io/golang:1.25-alpine AS integrator
 
 WORKDIR /target
 
