@@ -57,17 +57,17 @@
   },
   "packageManager": "yarn@4.1.1+sha256.f3cc0eda8e5560e529c7147565b30faa43b4e472d90e8634d7134a37c7f59781",
   "license": "AGPL-3.0-or-later",
-  "homepage": "https://Teal.Finance",
+  "homepage": "https://LynxAI.eu",
   "author": {
-    "name": "Teal.Finance/Quid contributors",
-    "email": "Teal.Finance@pm.me",
-    "url": "https://github.com/teal-finance/quid/graphs/contributors"
+    "name": "The Quid contributors",
+    "email": "hello@lynxai.eu",
+    "url": "https://github.com/LynxAIeu/quid/graphs/contributors"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/teal-finance/quid.git"
+    "url": "https://github.com/LynxAIeu/quid.git"
   },
   "bugs": {
-    "url": "https://github.com/teal-finance/quid/issues"
+    "url": "https://github.com/LynxAIeu/quid/issues"
   }
 }

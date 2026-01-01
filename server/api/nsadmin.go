@@ -5,9 +5,9 @@ import (
 
 	_ "github.com/lib/pq"
 
-	"github.com/teal-finance/garcon/gg"
-	"github.com/teal-finance/quid/server"
-	"github.com/teal-finance/quid/server/db"
+	"github.com/LynxAIeu/garcon/gg"
+	"github.com/LynxAIeu/quid/server"
+	"github.com/LynxAIeu/quid/server/db"
 )
 
 // listAdministrators : select all admin users for a namespace.

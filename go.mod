@@ -1,4 +1,4 @@
-module github.com/teal-finance/quid
+module github.com/LynxAIeu/quid
 
 go 1.22
 
@@ -11,9 +11,9 @@ require (
 	github.com/lib/pq v1.10.9
 	github.com/manifoldco/promptui v0.9.0
 	github.com/spf13/viper v1.19.0
-	github.com/teal-finance/emo v0.0.0-20240610104517-58d37361ce25
-	github.com/teal-finance/garcon v0.35.1
-	github.com/teal-finance/incorruptible v0.0.0-20240610111019-e80aff374f9b
+	github.com/LynxAIeu/emo v0.0.0-20240610104517-58d37361ce25
+	github.com/LynxAIeu/garcon v0.35.1
+	github.com/LynxAIeu/incorruptible v0.0.0-20240610111019-e80aff374f9b
 	golang.org/x/crypto v0.24.0
 )
 

@@ -6,7 +6,7 @@ import (
 	"crypto/rand"
 	"encoding/hex"
 
-	"github.com/teal-finance/emo"
+	"github.com/LynxAIeu/emo"
 )
 
 var log = emo.NewZone("crypt")

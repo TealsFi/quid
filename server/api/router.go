@@ -6,11 +6,11 @@ import (
 	color "github.com/acmacalister/skittles"
 	"github.com/go-chi/chi/v5"
 
-	"github.com/teal-finance/emo"
-	"github.com/teal-finance/garcon"
-	"github.com/teal-finance/garcon/gg"
-	"github.com/teal-finance/incorruptible"
-	"github.com/teal-finance/quid/crypt"
+	"github.com/LynxAIeu/emo"
+	"github.com/LynxAIeu/garcon"
+	"github.com/LynxAIeu/garcon/gg"
+	"github.com/LynxAIeu/incorruptible"
+	"github.com/LynxAIeu/quid/crypt"
 )
 
 var log = emo.NewZone("api")

@@ -3,7 +3,7 @@ package crypt_test
 import (
 	"testing"
 
-	"github.com/teal-finance/quid/crypt"
+	"github.com/LynxAIeu/quid/crypt"
 )
 
 func TestAesGcm(t *testing.T) {

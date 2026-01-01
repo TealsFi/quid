@@ -5,9 +5,9 @@ import (
 
 	"golang.org/x/crypto/bcrypt"
 
-	"github.com/teal-finance/garcon/gg"
-	"github.com/teal-finance/quid/server"
-	db "github.com/teal-finance/quid/server/db"
+	"github.com/LynxAIeu/garcon/gg"
+	"github.com/LynxAIeu/quid/server"
+	db "github.com/LynxAIeu/quid/server/db"
 )
 
 // listUsersInNs : select all users for a namespace.

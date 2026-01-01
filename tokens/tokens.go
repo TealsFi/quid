@@ -18,17 +18,17 @@ import (
 
 	"github.com/golang-jwt/jwt/v4"
 
-	"github.com/teal-finance/emo"
-	"github.com/teal-finance/garcon/gg"
-	"github.com/teal-finance/garcon/timex"
-	"github.com/teal-finance/quid/crypt"
+	"github.com/LynxAIeu/emo"
+	"github.com/LynxAIeu/garcon/gg"
+	"github.com/LynxAIeu/garcon/timex"
+	"github.com/LynxAIeu/quid/crypt"
 )
 
 var log = emo.NewZone("tokens")
 
 const notSupportedNotice = " not yet supported. " +
-	"Please contact teal.finance@pm.me or " +
-	"open an issue at https://github.com/teal-finance/quid"
+	"Please contact hello@lynxai.eu or " +
+	"open an issue at https://github.com/LynxAIeu/quid"
 
 // GenRefreshToken generates a refresh token for a user in a namespace.
 func GenRefreshToken(timeout, maxTTL, namespace, user string, secretKey []byte) (string, error) {

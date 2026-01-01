@@ -3,8 +3,8 @@ package api
 import (
 	"net/http"
 
-	"github.com/teal-finance/quid/server"
-	"github.com/teal-finance/quid/server/db"
+	"github.com/LynxAIeu/quid/server"
+	"github.com/LynxAIeu/quid/server/db"
 )
 
 // quidAdminMiddleware : check the token claim to see if the user is admin.

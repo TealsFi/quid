@@ -3,10 +3,10 @@ package api
 import (
 	"net/http"
 
-	"github.com/teal-finance/garcon/gg"
-	"github.com/teal-finance/incorruptible"
-	"github.com/teal-finance/quid/server"
-	"github.com/teal-finance/quid/server/db"
+	"github.com/LynxAIeu/garcon/gg"
+	"github.com/LynxAIeu/incorruptible"
+	"github.com/LynxAIeu/quid/server"
+	"github.com/LynxAIeu/quid/server/db"
 )
 
 // Key IDs for the Incorruptible TValues

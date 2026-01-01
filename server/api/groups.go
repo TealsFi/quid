@@ -3,9 +3,9 @@ package api
 import (
 	"net/http"
 
-	"github.com/teal-finance/garcon/gg"
-	"github.com/teal-finance/quid/server"
-	db "github.com/teal-finance/quid/server/db"
+	"github.com/LynxAIeu/garcon/gg"
+	"github.com/LynxAIeu/quid/server"
+	db "github.com/LynxAIeu/quid/server/db"
 )
 
 // allNsGroups : get all groups for a namespace http handler.

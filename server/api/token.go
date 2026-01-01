@@ -8,10 +8,10 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/golang-jwt/jwt/v4"
 
-	"github.com/teal-finance/garcon/gg"
-	"github.com/teal-finance/quid/server"
-	db "github.com/teal-finance/quid/server/db"
-	"github.com/teal-finance/quid/tokens"
+	"github.com/LynxAIeu/garcon/gg"
+	"github.com/LynxAIeu/quid/server"
+	db "github.com/LynxAIeu/quid/server/db"
+	"github.com/LynxAIeu/quid/tokens"
 )
 
 // requestRefreshToken : http login handler.

@@ -12,7 +12,7 @@ import (
 	// pg import.
 	_ "github.com/lib/pq"
 
-	"github.com/teal-finance/emo"
+	"github.com/LynxAIeu/emo"
 )
 
 var db *sqlx.DB

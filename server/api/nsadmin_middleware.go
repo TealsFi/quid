@@ -3,9 +3,9 @@ package api
 import (
 	"net/http"
 
-	"github.com/teal-finance/incorruptible"
-	"github.com/teal-finance/quid/server"
-	"github.com/teal-finance/quid/server/db"
+	"github.com/LynxAIeu/incorruptible"
+	"github.com/LynxAIeu/quid/server"
+	"github.com/LynxAIeu/quid/server/db"
 )
 
 // isNsAdmin checks that the requested namespace operation

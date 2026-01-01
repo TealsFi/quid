@@ -4,11 +4,11 @@ import (
 	"flag"
 	"net/url"
 
-	"github.com/teal-finance/emo"
-	"github.com/teal-finance/garcon/gg"
-	"github.com/teal-finance/quid/crypt"
-	"github.com/teal-finance/quid/server/api"
-	"github.com/teal-finance/quid/server/db"
+	"github.com/LynxAIeu/emo"
+	"github.com/LynxAIeu/garcon/gg"
+	"github.com/LynxAIeu/quid/crypt"
+	"github.com/LynxAIeu/quid/server/api"
+	"github.com/LynxAIeu/quid/server/db"
 )
 
 var log = emo.NewZone("quid")

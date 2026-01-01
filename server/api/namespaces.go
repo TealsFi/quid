@@ -4,10 +4,10 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/teal-finance/garcon/gg"
-	"github.com/teal-finance/quid/server"
-	db "github.com/teal-finance/quid/server/db"
-	"github.com/teal-finance/quid/tokens"
+	"github.com/LynxAIeu/garcon/gg"
+	"github.com/LynxAIeu/quid/server"
+	db "github.com/LynxAIeu/quid/server/db"
+	"github.com/LynxAIeu/quid/tokens"
 )
 
 // allNamespaces : get all namespaces.

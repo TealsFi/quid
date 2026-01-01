@@ -1,7 +1,7 @@
 package db
 
 import (
-	"github.com/teal-finance/quid/tokens"
+	"github.com/LynxAIeu/quid/tokens"
 )
 
 // genNsAdminToken : generate a refresh token for an admin user and namespace
