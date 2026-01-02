@@ -6,7 +6,7 @@ require (
 	github.com/acmacalister/skittles v0.0.0-20160609003031-7423546701e1
 	github.com/cristalhq/base64 v0.1.2
 	github.com/go-chi/chi/v5 v5.0.12
-	github.com/golang-jwt/jwt/v4 v4.5.0
+	github.com/golang-jwt/jwt/v4 v4.5.2
 	github.com/jmoiron/sqlx v1.4.0
 	github.com/lib/pq v1.10.9
 	github.com/manifoldco/promptui v0.9.0
