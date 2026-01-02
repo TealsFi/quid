@@ -9,6 +9,7 @@ import (
 	"github.com/LynxAIeu/emo"
 	"github.com/LynxAIeu/garcon"
 	"github.com/LynxAIeu/garcon/gg"
+	"github.com/LynxAIeu/garcon/vv"
 	"github.com/LynxAIeu/incorruptible"
 	"github.com/LynxAIeu/quid/crypt"
 )
@@ -17,7 +18,7 @@ var log = emo.NewZone("api")
 
 var incorr *incorruptible.Incorruptible
 
-var gw garcon.Writer
+var gw gg.Writer
 
 // RunServer : configure and run the server.
 func RunServer(port int, devMode bool, allowedOrigins, wwwDir string) {
@@ -96,7 +97,7 @@ func newRouter(g *garcon.Garcon, wwwDir string) http.Handler {
 		})
 
 		// only admin can see the Git version & commit date.
-		r.Get("/version", garcon.ServeVersion())
+		r.Get("/version", vv.ServeVersion())
 
 		r.Route("/users", func(r chi.Router) {
 			r.Post("/add", createUser)
