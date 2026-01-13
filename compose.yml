@@ -1,8 +1,6 @@
 # a Compose file always starts with the version number.
 # The version can be '3.9' but here we do not know
 # what is the minimal required version: we just specify all versions '3'.
-version: '3'
-
 networks:
   quid-db-network:
     internal: true
@@ -19,7 +17,8 @@ services:
     container_name: quid # Good practice: container_name = service name.
     image: quid
     build:
-      context: . # Search the Dockerfile in the "." local directory.
+      context: .
+      dockerfile: Containerfile
       args:
         - uid=6606 # "uid" and "gid" to run Quid in non-root mode.
         - gid=6606

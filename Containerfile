@@ -30,18 +30,23 @@ FROM docker.io/node:24-alpine AS ui-builder
 
 WORKDIR /code
 
-COPY ui/package.json \
-     ui/yarn.lock   ./
+COPY ui/package.json         \
+     ui/package-lock.json   ./
 
 RUN set -ex                         ;\
     node --version                  ;\
-    npm install
+    npm ci --no-fund --no-audit
+    # ci = clean-install => Never write the package files, use package-lock.json only
+    # --no-fund         => Do funding display
+    # --no-audit        => No security audit
+    # --only=production => exclude devDependencies
+    # --omit=dev        => do not install of the "dev" packages
 
-COPY ui/index.html         \
-     ui/postcss.config.js  \
-     ui/tailwind.config.js \
-     ui/tsconfig.json      \
-     ui/vite.config.ts    ./
+COPY ui/index.html           \
+     ui/postcss.config.js    \
+     ui/tailwind.config.js   \
+     ui/tsconfig.json        \
+     ui/vite.config.mts     ./
 
 COPY ui/public public
 COPY ui/src    src
@@ -64,7 +69,6 @@ RUN set -ex           ;\
     go mod verify
 
 COPY cmd    cmd
-COPY crypt  crypt
 COPY server server
 COPY tokens tokens
 
@@ -72,10 +76,14 @@ COPY tokens tokens
 # GOAMD64=v3 --> https://github.com/golang/go/wiki/MinimumRequirements#amd64
 RUN set -ex                                                          ;\
     ls -lShA                                                         ;\
+    case "$(grep flags -m1 /proc/cpuinfo)" in                        ;\
+        *" avx512f "*)  export GOAMD64=v4;;                          ;\
+        *" avx2 "*)     export GOAMD64=v3;;                          ;\
+        *" sse2 "*)     export GOAMD64=v2;;                          ;\
+    esac                                                             ;\
     CGO_ENABLED=0                                                     \
     GOFLAGS="-trimpath -modcacherw"                                   \
     GOLDFLAGS="-d -s -w -extldflags=-static"                          \
-    GOAMD64=v3                                                        \
     GOEXPERIMENT=newinliner                                           \
     go build -a -tags osusergo,netgo -installsuffix netgo ./cmd/quid ;\
     ls -sh quid                                                      ;\
