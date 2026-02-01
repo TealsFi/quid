@@ -72,9 +72,12 @@ COPY cmd    cmd
 COPY server server
 COPY tokens tokens
 
-# Go build flags "-s -w" removes all debug symbols: https://pkg.go.dev/cmd/link
-# GOAMD64=v3 --> https://github.com/golang/go/wiki/MinimumRequirements#amd64
-RUN set -ex                                                          ;\
+# --mount=type -> https://docs.docker.com/build/cache/optimize/#use-cache-mounts
+# Go build flags: "-s -w" removes all debug symbols: https://pkg.go.dev/cmd/link
+# GOAMD64=v3 --> https://go.dev/wiki/MinimumRequirements#amd64
+RUN --mount=type=cache,target=/go/pkg/mod                             \
+    --mount=type=cache,target=/root/.cache/go-build                   \
+    set -ex                                                          ;\
     ls -lShA                                                         ;\
     case "$(grep flags -m1 /proc/cpuinfo)" in                        ;\
         *" avx512f "*)  export GOAMD64=v4;;                          ;\
@@ -84,7 +87,6 @@ RUN set -ex                                                          ;\
     CGO_ENABLED=0                                                     \
     GOFLAGS="-trimpath -modcacherw"                                   \
     GOLDFLAGS="-d -s -w -extldflags=-static"                          \
-    GOEXPERIMENT=newinliner                                           \
     go build -a -tags osusergo,netgo -installsuffix netgo ./cmd/quid ;\
     ls -sh quid                                                      ;\
     ./quid -help  # smoke test
