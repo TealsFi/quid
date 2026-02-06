@@ -6,11 +6,10 @@ import (
 	color "github.com/acmacalister/skittles"
 	"github.com/go-chi/chi/v5"
 
-	"github.com/TealsFi/quid/crypt"
-
 	"github.com/lynxai-team/emo"
 	"github.com/lynxai-team/garcon/gc"
 	"github.com/lynxai-team/garcon/gg"
+	"github.com/lynxai-team/garcon/gwt"
 	"github.com/lynxai-team/garcon/vv"
 	"github.com/lynxai-team/incorruptible"
 )
@@ -45,7 +44,7 @@ func newServer(port int, devMode bool, allowedOrigins, wwwDir string) http.Serve
 	if devMode {
 		maxAge = 3600 * 24 * 365 // one year
 	}
-	incorr = g.IncorruptibleCheckerBin(crypt.EncodingKey[:16], maxAge, false)
+	incorr = g.IncorruptibleCheckerBin(gwt.EncodingKey[:16], maxAge, false)
 
 	middleware := gg.NewChain(
 		g.MiddlewareRejectUnprintableURI(),

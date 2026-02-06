@@ -5,9 +5,10 @@ import (
 	"errors"
 
 	// pg import.
-	_ "github.com/lib/pq"
 
-	"github.com/TealsFi/quid/crypt"
+	_ "github.com/lib/pq"
+	"github.com/lynxai-team/garcon/gwt"
+
 	"github.com/TealsFi/quid/server"
 	"github.com/TealsFi/quid/tokens"
 )
@@ -77,13 +78,13 @@ func SelectNsFromName(nsName string) (server.Namespace, error) {
 		return ns, err
 	}
 
-	refreshKey, err := crypt.AesGcmDecryptBin(data.EncryptedRefreshKey)
+	refreshKey, err := gwt.AesGcmDecryptBin(data.EncryptedRefreshKey)
 	if err != nil {
 		log.DecryptError("RefreshKey", err)
 		return ns, err
 	}
 
-	accessKey, err := crypt.AesGcmDecryptBin(data.EncryptedAccessKey)
+	accessKey, err := gwt.AesGcmDecryptBin(data.EncryptedAccessKey)
 	if err != nil {
 		log.DecryptError("AccessKey", err)
 		return ns, err
@@ -151,13 +152,13 @@ func EnableNsEndpoint(id int64, enable bool) error {
 
 // CreateNamespace : create a namespace.
 func CreateNamespace(name, ttl, refreshTTL, algo string, accessKey, refreshKey []byte, endpoint bool) (int64, error) {
-	ak, err := crypt.AesGcmEncryptBin(accessKey)
+	ak, err := gwt.AesGcmEncryptBin(accessKey)
 	if err != nil {
 		log.EncryptError("AccessKey", err)
 		return 0, err
 	}
 
-	rk, err := crypt.AesGcmEncryptBin(refreshKey)
+	rk, err := gwt.AesGcmEncryptBin(refreshKey)
 	if err != nil {
 		log.EncryptError("RefreshKey", err)
 		return 0, err

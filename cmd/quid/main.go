@@ -4,12 +4,12 @@ import (
 	"flag"
 	"net/url"
 
-	"github.com/TealsFi/quid/crypt"
 	"github.com/TealsFi/quid/server/api"
 	"github.com/TealsFi/quid/server/db"
 
 	"github.com/lynxai-team/emo"
 	"github.com/lynxai-team/garcon/gg"
+	"github.com/lynxai-team/garcon/gwt"
 )
 
 var log = emo.NewZone("quid")
@@ -139,7 +139,7 @@ func main() {
 		*key = (*key)[:32]
 	}
 
-	crypt.EncodingKey, err = gg.DecodeHexOrB64(*key, 16)
+	gwt.EncodingKey, err = gg.DecodeHexOrB64(*key, 16)
 	if err != nil {
 		log.Error(err)
 		log.Fatal("Want AES-128 key in hexadecimal (32 digits) or Base64 (unpadded 22 characters, RFC 4648 §5), but got", len(*key), "bytes:", *key)

@@ -16,10 +16,9 @@ import (
 	"hash"
 	"time"
 
-	"github.com/TealsFi/quid/crypt"
-
 	"github.com/lynxai-team/emo"
 	"github.com/lynxai-team/garcon/gg"
+	"github.com/lynxai-team/garcon/gwt"
 	"github.com/lynxai-team/garcon/timex"
 
 	"github.com/golang-jwt/jwt/v5"
@@ -148,7 +147,7 @@ func PrivateDER2PublicDER(algo string, privateDER []byte) ([]byte, error) {
 // or the public key for asymmetric algos (like RSA, EdDSA).
 // The returned key is in DER format.
 func DecryptVerificationKeyDER(algo string, accessKey []byte) ([]byte, error) {
-	private, err := crypt.AesGcmDecryptBin(accessKey)
+	private, err := gwt.AesGcmDecryptBin(accessKey)
 	if err != nil {
 		log.DecryptError(err)
 		return nil, err
